@@ -6,12 +6,59 @@ package com.wiseside.martinidev.model;
 
 public class Accasamento implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Accasamento() {
-    }
+	@org.kie.api.definition.type.Label(value = "Capannone")
+	private java.lang.String capannone;
+	@org.kie.api.definition.type.Label(value = "Data Accasamento")
+	private java.time.LocalDate dataAccasamento;
+	@org.kie.api.definition.type.Label(value = "Numero Maschi")
+	private java.lang.Integer numeroMaschi;
+	@org.kie.api.definition.type.Label(value = "Numero Femmine")
+	private java.lang.Integer numeroFemmine;
 
+	public Accasamento() {
+	}
 
+	public java.lang.String getCapannone() {
+		return this.capannone;
+	}
 
+	public void setCapannone(java.lang.String capannone) {
+		this.capannone = capannone;
+	}
+
+	public java.time.LocalDate getDataAccasamento() {
+		return this.dataAccasamento;
+	}
+
+	public void setDataAccasamento(java.time.LocalDate dataAccasamento) {
+		this.dataAccasamento = dataAccasamento;
+	}
+
+	public java.lang.Integer getNumeroMaschi() {
+		return this.numeroMaschi;
+	}
+
+	public void setNumeroMaschi(java.lang.Integer numeroMaschi) {
+		this.numeroMaschi = numeroMaschi;
+	}
+
+	public java.lang.Integer getNumeroFemmine() {
+		return this.numeroFemmine;
+	}
+
+	public void setNumeroFemmine(java.lang.Integer numeroFemmine) {
+		this.numeroFemmine = numeroFemmine;
+	}
+
+	public Accasamento(java.lang.String capannone,
+			java.time.LocalDate dataAccasamento,
+			java.lang.Integer numeroMaschi, java.lang.Integer numeroFemmine) {
+		this.capannone = capannone;
+		this.dataAccasamento = dataAccasamento;
+		this.numeroMaschi = numeroMaschi;
+		this.numeroFemmine = numeroFemmine;
+	}
 
 }
