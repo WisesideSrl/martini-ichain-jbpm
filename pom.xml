@@ -4,10 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wiseside</groupId>
   <artifactId>MartiniDev</artifactId>
-  <version>1.0.10-FEATURE_MATURAZIONE-SNAPSHOT</version>
+  <version>1.0.10-FEATURE_RICEVIMENTO-SNAPSHOT</version>
   <packaging>kjar</packaging>
   <name>MartiniDev</name>
   <description></description>
+  
   <dependencies>
     <dependency>
       <groupId>org.kie</groupId>
@@ -46,7 +47,15 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
   <build>
+    <extensions>
+      <extension>
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.2.0</version>
+      </extension>
+    </extensions>
     <plugins>
       <plugin>
         <groupId>org.kie</groupId>
@@ -55,35 +64,53 @@
         <extensions>true</extensions>
       </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>com.google.cloud.artifactregistry</groupId>
-        <artifactId>artifactregistry-maven-wagon</artifactId>
-        <version>2.2.0</version>
-      </extension>
-    </extensions>
   </build>
-  <distributionManagement>
-    <snapshotRepository>
-      <id>artifact-registry</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
-    </snapshotRepository>
-    <repository>
-      <id>artifact-registry</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
-    </repository>
-  </distributionManagement>
-
-  <repositories>
-    <repository>
-      <id>artifact-registry</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
+        </repository>
+      </repositories>
+      <distributionManagement>
+        <repository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
+        </repository>
+        <snapshotRepository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+    <profile>
+      <id>jbpm</id>
+      <activation>
+        <file>
+          <exists>/opt/jboss</exists>
+        </file>
+      </activation>
+      <repositories>
+        <repository>
+          <id>artifact-registry</id>
+          <url>https://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
+        </repository>
+      </repositories>
+      <distributionManagement>
+        <repository>
+          <id>artifact-registry</id>
+          <url>https://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
+        </repository>
+        <snapshotRepository>
+          <id>artifact-registry</id>
+          <url>https://europe-west1-maven.pkg.dev/ichain-ii/ichain-ii-maven-repo</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+  </profiles>
 </project>
