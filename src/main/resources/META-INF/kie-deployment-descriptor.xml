@@ -14,8 +14,22 @@
     </marshalling-strategies>
     <event-listeners/>
     <task-event-listeners/>
-    <globals/>
-    <work-item-handlers/>
+    <globals>
+        <global>
+            <resolver>mvel</resolver>
+            <identifier>"https://bpm-dev.wiseside.com/api/servicetask/"</identifier>
+            <parameters/>
+            <name>bff_api_url</name>
+        </global>
+    </globals>
+    <work-item-handlers>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new org.jbpm.process.workitem.rest.RESTWorkItemHandler("", "")</identifier>
+            <parameters/>
+            <name>Rest</name>
+        </work-item-handler>
+    </work-item-handlers>
     <environment-entries/>
     <configurations/>
     <required-roles/>
