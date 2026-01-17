@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_66zXoPPHEfC7LbOq7tqkTQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_9mHHUPPHEfC7LbOq7tqkTQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:process id="trattamento_veterinario" drools:packageName="com.wiseside.martinidev.process.sub" drools:version="1.0" drools:adHoc="false" name="Trattamento veterinario" isExecutable="true" processType="Public">
+    <bpmn2:sequenceFlow id="_10D5601D-1738-4D3E-AB2E-445BEA849308" sourceRef="_0299E560-6752-4F0E-88F5-45A45AD0F503" targetRef="_09BD83EC-29EC-4624-A476-6D82EF1B3FD3"/>
     <bpmn2:endEvent id="_F8D72C71-E59F-4D42-A8E3-C8FAC356B5CA" name="Gestione trattamento veterinario concluso">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -14,7 +15,8 @@
           <drools:metaValue><![CDATA[Inizio gestione trattamento veterinario]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:signalEventDefinition id="_66zXofPHEfC7LbOq7tqkTQ"/>
+      <bpmn2:outgoing>_10D5601D-1738-4D3E-AB2E-445BEA849308</bpmn2:outgoing>
+      <bpmn2:signalEventDefinition id="_9mHHUfPHEfC7LbOq7tqkTQ"/>
     </bpmn2:startEvent>
     <bpmn2:subProcess id="_09BD83EC-29EC-4624-A476-6D82EF1B3FD3" name="Sub-process">
       <bpmn2:extensionElements>
@@ -22,6 +24,7 @@
           <drools:metaValue><![CDATA[Sub-process]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
+      <bpmn2:incoming>_10D5601D-1738-4D3E-AB2E-445BEA849308</bpmn2:incoming>
       <bpmn2:sequenceFlow id="_EA189015-E8FF-4BF1-899A-960EEA9E6D18" sourceRef="_59482269-86E8-4969-BDC5-8CF0C44B4099" targetRef="_81515713-6300-4760-87E8-63F0E5AFD22C">
         <bpmn2:extensionElements>
           <drools:metaData name="isAutoConnection.target">
@@ -44,11 +47,11 @@
         </bpmn2:extensionElements>
         <bpmn2:incoming>_305F387B-8590-4D25-897F-5C8063EABBF5</bpmn2:incoming>
         <bpmn2:outgoing>_EA189015-E8FF-4BF1-899A-960EEA9E6D18</bpmn2:outgoing>
-        <bpmn2:ioSpecification id="_66zXovPHEfC7LbOq7tqkTQ">
-          <bpmn2:inputSet id="_66zXo_PHEfC7LbOq7tqkTQ"/>
-          <bpmn2:outputSet id="_66zXpPPHEfC7LbOq7tqkTQ"/>
+        <bpmn2:ioSpecification id="_9mHHUvPHEfC7LbOq7tqkTQ">
+          <bpmn2:inputSet id="_9mHHU_PHEfC7LbOq7tqkTQ"/>
+          <bpmn2:outputSet id="_9mHHVPPHEfC7LbOq7tqkTQ"/>
         </bpmn2:ioSpecification>
-        <bpmn2:multiInstanceLoopCharacteristics id="_66zXpfPHEfC7LbOq7tqkTQ"/>
+        <bpmn2:multiInstanceLoopCharacteristics id="_9mHHVfPHEfC7LbOq7tqkTQ"/>
         <bpmn2:sequenceFlow id="_9EDA09E1-2E4E-4596-AE51-4BE8AEF485C6" sourceRef="_109C47AF-1400-4DDC-9AB3-1DC3B898428B" targetRef="_84E4A20C-68A8-45C6-B0F6-AB088FF97CD7">
           <bpmn2:extensionElements>
             <drools:metaData name="isAutoConnection.source">
@@ -87,8 +90,8 @@
       </bpmn2:subProcess>
     </bpmn2:subProcess>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_66zXpvPHEfC7LbOq7tqkTQ">
-    <bpmndi:BPMNPlane id="_66zXp_PHEfC7LbOq7tqkTQ" bpmnElement="trattamento_veterinario">
+  <bpmndi:BPMNDiagram id="_9mHHVvPHEfC7LbOq7tqkTQ">
+    <bpmndi:BPMNPlane id="_9mHHV_PHEfC7LbOq7tqkTQ" bpmnElement="trattamento_veterinario">
       <bpmndi:BPMNShape id="shape__09BD83EC-29EC-4624-A476-6D82EF1B3FD3" bpmnElement="_09BD83EC-29EC-4624-A476-6D82EF1B3FD3" isExpanded="true">
         <dc:Bounds height="456.0" width="1062.0" x="304.0" y="59.0"/>
       </bpmndi:BPMNShape>
@@ -127,14 +130,18 @@
         <di:waypoint xsi:type="dc:Point" x="603.0" y="286.5"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="shape__0299E560-6752-4F0E-88F5-45A45AD0F503" bpmnElement="_0299E560-6752-4F0E-88F5-45A45AD0F503">
-        <dc:Bounds height="56.0" width="56.0" x="188.0" y="243.0"/>
+        <dc:Bounds height="56.0" width="56.0" x="136.0" y="259.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__F8D72C71-E59F-4D42-A8E3-C8FAC356B5CA" bpmnElement="_F8D72C71-E59F-4D42-A8E3-C8FAC356B5CA">
         <dc:Bounds height="56.0" width="56.0" x="78.0" y="118.5"/>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__0299E560-6752-4F0E-88F5-45A45AD0F503_to_shape__09BD83EC-29EC-4624-A476-6D82EF1B3FD3" bpmnElement="_10D5601D-1738-4D3E-AB2E-445BEA849308">
+        <di:waypoint xsi:type="dc:Point" x="164.0" y="287.0"/>
+        <di:waypoint xsi:type="dc:Point" x="304.0" y="287.0"/>
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_66zXqPPHEfC7LbOq7tqkTQ" type="BPSimData">
+  <bpmn2:relationship id="_9mHHWPPHEfC7LbOq7tqkTQ" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
@@ -142,7 +149,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_66zXoPPHEfC7LbOq7tqkTQ</bpmn2:source>
-    <bpmn2:target>_66zXoPPHEfC7LbOq7tqkTQ</bpmn2:target>
+    <bpmn2:source>_9mHHUPPHEfC7LbOq7tqkTQ</bpmn2:source>
+    <bpmn2:target>_9mHHUPPHEfC7LbOq7tqkTQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
