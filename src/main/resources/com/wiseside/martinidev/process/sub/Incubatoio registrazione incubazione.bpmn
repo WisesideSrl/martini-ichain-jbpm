@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_GGOSIIQeEfG3PfFtblwADw" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_dopaoIQeEfG3PfFtblwADw" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_idCicloItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_payloadItem" structureRef="java.util.Map"/>
+  <bpmn2:itemDefinition id="_responseItem" structureRef="java.util.Map"/>
+  <bpmn2:itemDefinition id="_restUrlItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_usernameItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_datiCicloItem" structureRef="java.util.Map"/>
   <bpmn2:process id="Incubatoio_registrazione_incubazione" drools:packageName="com.wiseside.martinidev.process.sub" drools:version="1.0" drools:adHoc="false" name="Incubatoio registrazione incubazione" isExecutable="true" processType="Public">
     <bpmn2:extensionElements>
       <drools:metaData name="customDescription">
@@ -7,8 +13,15 @@
       </drools:metaData>
       <drools:import name=""/>
       <drools:import name=""/>
+      <drools:global identifier="bff_api_url" type="String"/>
     </bpmn2:extensionElements>
-    <bpmn2:laneSet id="_GGOSIYQeEfG3PfFtblwADw">
+    <bpmn2:property id="idCiclo" itemSubjectRef="_idCicloItem" name="idCiclo"/>
+    <bpmn2:property id="payload" itemSubjectRef="_payloadItem" name="payload"/>
+    <bpmn2:property id="response" itemSubjectRef="_responseItem" name="response"/>
+    <bpmn2:property id="restUrl" itemSubjectRef="_restUrlItem" name="restUrl"/>
+    <bpmn2:property id="username" itemSubjectRef="_usernameItem" name="username"/>
+    <bpmn2:property id="datiCiclo" itemSubjectRef="_datiCicloItem" name="datiCiclo"/>
+    <bpmn2:laneSet id="_dopaoYQeEfG3PfFtblwADw">
       <bpmn2:lane id="_20231636-A6E4-49DB-B968-86FD548D69C5" name="Incubatoio registrazione incubazione">
         <bpmn2:extensionElements>
           <drools:metaData name="elementname">
@@ -27,8 +40,8 @@
       <bpmn2:outgoing>_DE1F254D-B08F-4EA2-B6E2-235F48F168D0</bpmn2:outgoing>
     </bpmn2:startEvent>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_GGOSIoQeEfG3PfFtblwADw">
-    <bpmndi:BPMNPlane id="_GGOSI4QeEfG3PfFtblwADw" bpmnElement="Incubatoio_registrazione_incubazione">
+  <bpmndi:BPMNDiagram id="_dopaooQeEfG3PfFtblwADw">
+    <bpmndi:BPMNPlane id="_dopao4QeEfG3PfFtblwADw" bpmnElement="Incubatoio_registrazione_incubazione">
       <bpmndi:BPMNShape id="shape__60E9D4B5-29A3-4FC6-90AB-87C26AABFDF7" bpmnElement="_60E9D4B5-29A3-4FC6-90AB-87C26AABFDF7">
         <dc:Bounds height="56.0" width="56.0" x="147.0" y="264.14856"/>
       </bpmndi:BPMNShape>
@@ -44,12 +57,12 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_GGOSJIQeEfG3PfFtblwADw" type="BPSimData">
+  <bpmn2:relationship id="_dopapIQeEfG3PfFtblwADw" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_60E9D4B5-29A3-4FC6-90AB-87C26AABFDF7" id="_GGOSJYQeEfG3PfFtblwADw">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_60E9D4B5-29A3-4FC6-90AB-87C26AABFDF7" id="_dopapYQeEfG3PfFtblwADw">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -59,7 +72,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_GGOSIIQeEfG3PfFtblwADw</bpmn2:source>
-    <bpmn2:target>_GGOSIIQeEfG3PfFtblwADw</bpmn2:target>
+    <bpmn2:source>_dopaoIQeEfG3PfFtblwADw</bpmn2:source>
+    <bpmn2:target>_dopaoIQeEfG3PfFtblwADw</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
